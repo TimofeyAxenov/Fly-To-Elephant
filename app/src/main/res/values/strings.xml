@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FlyToElephant</string>
+    <string name="total_count">Общий счёт</string>
+    <string name="best_score">Лучший счёт</string>
+    <string name="start_game">Начать игру</string>
+    <string name="change_mode">Смена режимов</string>
+    <string name="letter_count">Выбрать количество букв</string>
+    <string name="CheckWord">Проверить слово</string>
+</resources>

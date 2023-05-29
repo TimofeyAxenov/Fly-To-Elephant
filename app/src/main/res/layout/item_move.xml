@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/Letter1"
+            android:layout_width="70sp"
+            android:layout_height="70sp"
+            android:background="@color/gray"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toStartOf="@+id/Letter2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="К" />
+
+        <TextView
+            android:id="@+id/Letter2"
+            android:layout_width="70sp"
+            android:layout_height="70sp"
+            android:background="@color/gray"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toStartOf="@+id/Letter3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Letter1"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="О" />
+
+        <TextView
+            android:id="@+id/Letter3"
+            android:layout_width="70sp"
+            android:layout_height="70sp"
+            android:background="@color/gray"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toStartOf="@+id/Letter4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Letter2"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Ш" />
+
+
+        <TextView
+            android:id="@+id/Letter4"
+            android:layout_width="70sp"
+            android:layout_height="70sp"
+            android:background="@color/gray"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toStartOf="@+id/Letter5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Letter3"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="К" />
+
+        <TextView
+            android:id="@+id/Letter5"
+            android:layout_width="70sp"
+            android:layout_height="70sp"
+            android:background="@color/gray"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Letter4"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="А" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
