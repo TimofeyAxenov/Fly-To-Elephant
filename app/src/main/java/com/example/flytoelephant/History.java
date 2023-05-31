@@ -8,7 +8,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class History extends AppCompatActivity {
 
@@ -33,21 +41,23 @@ public class History extends AppCompatActivity {
 
         Button backButton = findViewById(R.id.buttonBack);
 
+        InputStream inputStream = getResources().openRawResource(R.raw.history);
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+        try {
+            String line = bufferedReader.readLine();
+            while (line != null) {
+                String word = line;
+                moves.add(word);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         backButton.setOnClickListener(v -> {
             finish();
         });
 
-        Intent intentReceived = getIntent();
 
-        Bundle letters = intentReceived.getExtras();
-        Letter1 = letters.get("letter1").toString();
-        Letter2 = letters.get("letter2").toString();
-        Letter3 = letters.get("letter3").toString();
-        Letter4 = letters.get("letter4").toString();
-        Letter5 = letters.get("letter5").toString();
-        Word = Letter1 + Letter2 + Letter3 + Letter4 + Letter5;
-
-        moves.add(Word);
 
     }
 

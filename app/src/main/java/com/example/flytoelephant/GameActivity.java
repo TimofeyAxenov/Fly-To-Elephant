@@ -11,11 +11,24 @@ import android.widget.EditText;
 import com.example.flytoelephant.databinding.ActivityGameBinding;
 import com.example.flytoelephant.network.Network;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
 public class GameActivity extends AppCompatActivity {
 
 
 
     private ActivityGameBinding binding;
+
 
 
 
@@ -41,14 +54,17 @@ public class GameActivity extends AppCompatActivity {
 
 
         binding.changebutton.setOnClickListener(v -> {
-            Intent History = new Intent();
-            Bundle Letters = new Bundle();
-            Letters.putString("letter1", binding.letter1.getText().toString());
-            Letters.putString("letter2", binding.letter2.getText().toString());
-            Letters.putString("letter3", binding.letter3.getText().toString());
-            Letters.putString("letter4", binding.letter4.getText().toString());
-            Letters.putString("letter5", binding.letter5.getText().toString());
-            History.putExtras(Letters);
+
+            String Word = getWord();
+
+            try {
+                FileOutputStream fos = new FileOutputStream("history.txt");
+                byte[] byteword = Word.getBytes();
+                fos.write(byteword);
+                fos.write("\n".getBytes());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         });
 
 
@@ -63,4 +79,6 @@ public class GameActivity extends AppCompatActivity {
                 binding.letter4.getText().toString() +
                 binding.letter5.getText().toString();
     }
+
+
 }
